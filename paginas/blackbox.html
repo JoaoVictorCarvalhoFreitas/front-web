@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #181818;  
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #242424;
+            padding: 20px;
+        }
+
+        .sidebar h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .main-content h1 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .video-card {
+            width: 300px;
+            height: 200px;
+            background-color: #333;
+            position: relative;
+            border-radius: 5px;
+        }
+
+        .video-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .video-card .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .video-card .overlay i {
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .video-card:hover .overlay {
+            opacity: 1;
+        }
+
+        .video-card .title {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .video-card .duration {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: #fff;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #242424;
+            color: #fff;
+        }
+
+        .search-bar input:focus {
+            outline: none;
+        }
+
+        .search-bar i {
+            font-size: 20px;
+            color: #fff;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .header .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header .nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .header .nav a:hover {
+            text-decoration: underline;
+        }
+
+        .header .nav .notification {
+            position: relative;
+        }
+
+        .header .nav .notification .count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #ff0000;
+            color: #fff;
+            border-radius: 50%;
+            padding: 2px 5px;
+            font-size: 10px;
+        }
+
+        .header .nav .profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header .nav .profile img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        .header .nav .profile .username {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .header .nav .profile .arrow {
+            font-size: 16px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h3>Você</h3>
+            <ul>
+                <li><a href="#">Seu canal</a></li>
+                <li><a href="#">Histórico</a></li>
+                <li><a href="#">Playlists</a></li>
+                <li><a href="#">Seus vídeos</a></li>
+                <li><a href="#">Assistir mais tarde</a></li>
+                <li><a href="#">Vídeos com "Gostei"</a></li>
+            </ul>
+            <h3>Inscrições</h3>
+            <ul>
+                <li><a href="#">Minerva - Gamep... ((+))</a></li>
+                <li><a href="#">TV A Critica... ((+))</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <div class="logo">YouTube</div>
+                <div class="nav">
+                    <a href="#">Tudo</a>
+                    <a href="#">Jogos</a>
+                    <a href="#">League of Legends</a>
+                    <a href="#">Notícias</a>
+                    <a href="#">Ao vivo</a>
+                    <a href="#">Mixes</a>
+                    <a href="#">Computadores</a>
+                    <a href="#">Academia</a>
+                    <a href="#">Jogo de ação e aventura</a>
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="count">9+</span>
+                    </div>
+                    <div class="profile">
+                        <img src="https://picsum.photos/30/30" alt="Profile Picture">
+                        <span class="username">Seu Nome</span>
+                        <i class="fas fa-caret-down arrow"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Pesquisar">
+                <i class="fas fa-microphone"></i>
+            </div>
+            <h1>Recomendados</h1>
+            <div class="video-container">
+                <div class="video-card">
+                    <img src="https://picsum.photos/300/200" alt="Video Thumbnail">
+                    <div class="overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="title">Título do Vídeo 1</div>
+                    <div class="duration">19:25</div>
+                </div>
+                <div class="video-card">
+                    <img src="https://picsum.photos/300/200" alt="Video Thumbnail">
+                    <div class="overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="title">Título do Vídeo 2</div>
+                    <div class="duration">26:09</div>
+                </div>
+                <div class="video-card">
+                    <img src="https://picsum.photos/300/200" alt="Video Thumbnail">
+                    <div class="overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="title">Título do Vídeo 3</div>
+                    <div class="duration">21:02</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const youtube = document.querySelector('ytd-app');
+    const channelName = youtube.querySelector('yt-formatted-string[aria-label="Channel name"]').textContent;
+    console.log("The name of the channel is: " + channelName);
+    
+    const videos = youtube.querySelectorAll('ytd-video-renderer[aria-label="Video title"]');
+    for (const video of videos) {
+      const title = video.querySelector('a[href^="/watch"] yt-formatted-string').textContent;
+      const duration = video.querySelector('span[aria-label="Duration"]').textContent;
+      console.log("Video title: " + title + ", Duration: " + duration);
+    }
+</script>
+</html>
